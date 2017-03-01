@@ -11,6 +11,9 @@ namespace CSProject
     // "Learn C# in one day and learn it well" by Jamie Chan (2015)
     // 
     // 01.03.2017
+    //
+    // edit
+
     class Program
     {
         static void Main(string[] args)
