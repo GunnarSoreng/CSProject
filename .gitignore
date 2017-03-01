@@ -1,0 +1,4 @@
+*.cache
+CSProject/obj/Debug/CSProject.csproj.FileListAbsolute.txt
+/.vs/
+CSProject/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
