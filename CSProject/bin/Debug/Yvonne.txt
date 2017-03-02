@@ -1,0 +1,13 @@
+PAYSLIP FOR JAN 2017
+==========================
+Name of Staff: Yvonne
+Hours Worked: 100
+
+Basic Pay: kr 5 000,00
+Allowance: kr 0,00
+
+==========================
+Total Pay: kr 5 000,00
+==========================
+
+Thank you for using PaySoft.

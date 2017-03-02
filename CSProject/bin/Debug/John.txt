@@ -1,0 +1,13 @@
+PAYSLIP FOR JAN 2017
+==========================
+Name of Staff: John
+Hours Worked: 100
+
+Basic Pay: kr 3 000,00
+Overtime:  kr 0,00
+
+==========================
+Total Pay: kr 3 000,00
+==========================
+
+Thank you for using PaySoft.
