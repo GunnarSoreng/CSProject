@@ -400,57 +400,101 @@ namespace CSProject
         public void GeneratePaySlip(List<Staff> myStaff)
         {
             string path;
-            foreach (Staff f in myStaff)
+            if (myStaff != null)
             {
-                path = f.NameOfStaff + ".txt";
-                using (StreamWriter sw = new StreamWriter(path))
+                foreach (Staff f in myStaff)
                 {
-                    sw.WriteLine("PAYSLIP FOR {0} {1}", (MonthsOfYear)month, year);
-                    sw.WriteLine("==========================");
-                    sw.WriteLine("Name of Staff: {0}", f.NameOfStaff);
-                    sw.WriteLine("Hours Worked: {0}", f.HoursWorked);
-                    sw.WriteLine("");
-                    sw.WriteLine("Basic Pay: {0:C}", f.BasicPay);
-                    if (f.GetType() == typeof(Manager))
+                    try
                     {
-                        sw.WriteLine("Allowance: {0:C}", ((Manager)f).Allowance);
-                    }
-                    else if (f.GetType() == typeof(Admin))
-                    {
-                        sw.WriteLine("Overtime:  {0:C}", ((Admin)f).Overtime);
+                        if (f.NameOfStaff != null)
+                        {
+                            path = f.NameOfStaff + ".txt";
+                        }
+                        else
+                        {
+                            break;
+                        }
 
                     }
-                    sw.WriteLine("");
-                    sw.WriteLine("==========================");
-                    sw.WriteLine("Total Pay: {0:C}", f.TotalPay);
-                    sw.WriteLine("==========================");
-                    sw.WriteLine("");
-                    sw.WriteLine("Thank you for using PaySoft.");
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        break;
+                        //throw;
+                    }
+                    if (f.NameOfStaff != null)
+                    {
+                        path = f.NameOfStaff + ".txt";
+                    } else
+                    {
+                        break;
+                    }
+                    using (StreamWriter sw = new StreamWriter(path))
+                    {
+                        sw.WriteLine("PAYSLIP FOR {0} {1}", (MonthsOfYear)month, year);
+                        sw.WriteLine("==========================");
+                        sw.WriteLine("Name of Staff: {0}", f.NameOfStaff);
+                        sw.WriteLine("Hours Worked: {0}", f.HoursWorked);
+                        sw.WriteLine("");
+                        sw.WriteLine("Basic Pay: {0:C}", f.BasicPay);
+                        if (f.GetType() == typeof(Manager))
+                        {
+                            sw.WriteLine("Allowance: {0:C}", ((Manager)f).Allowance);
+                        }
+                        else if (f.GetType() == typeof(Admin))
+                        {
+                            sw.WriteLine("Overtime:  {0:C}", ((Admin)f).Overtime);
 
-                    sw.Close();
+                        }
+                        sw.WriteLine("");
+                        sw.WriteLine("==========================");
+                        sw.WriteLine("Total Pay: {0:C}", f.TotalPay);
+                        sw.WriteLine("==========================");
+                        sw.WriteLine("");
+                        sw.WriteLine("Thank you for using PaySoft.");
+
+                        sw.Close();
+                    }
+
                 }
-
             }
         }
 
         public void GenerateSummary(List<Staff> myStaff)
         {
-            var result =
-                from staff in myStaff
-                where staff.HoursWorked < 10
-                orderby staff.NameOfStaff ascending
-                select new { staff.NameOfStaff, staff.HoursWorked };
-            string path = "summary.txt";
-            using (StreamWriter sw = new StreamWriter(path))
+            if (myStaff != null)
             {
-                sw.WriteLine("Staff with less than 10 working hours");
-                sw.WriteLine("");
-                foreach (var person in result)
+                try
                 {
-                    sw.WriteLine("Name of Staff: {0}, Hours Worked: {1}", person.NameOfStaff, person.HoursWorked);
-                }
+                    var result =
+                        from staff in myStaff
+                        where staff.HoursWorked < 10
+                        orderby staff.NameOfStaff ascending
+                        select new { staff.NameOfStaff, staff.HoursWorked };
+                    string path = "summary.txt";
+                    if (result != null)
+                    {
+                        using (StreamWriter sw = new StreamWriter(path))
+                        {
+                            sw.WriteLine("Staff with less than 10 working hours");
+                            sw.WriteLine("");
+                            foreach (var person in result)
+                            {
+                                sw.WriteLine("Name of Staff: {0}, Hours Worked: {1}", person.NameOfStaff, person.HoursWorked);
+                            }
 
-                sw.Close();
+                            sw.Close();
+                        }
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    
+                    return;
+                    // throw;
+                }
             }
         }
 
