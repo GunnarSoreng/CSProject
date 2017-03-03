@@ -11,3 +11,4 @@ C:\Test\CSProject\CSProject.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.
 C:\Test\CSProject\CSProject.Tests\obj\Debug\CSProject.Tests.csprojResolveAssemblyReference.cache
 C:\Test\CSProject\CSProject.Tests\obj\Debug\CSProject.Tests.dll
 C:\Test\CSProject\CSProject.Tests\obj\Debug\CSProject.Tests.pdb
+C:\Test\CSProject\CSProject.Tests\bin\Debug\CSProject.xml

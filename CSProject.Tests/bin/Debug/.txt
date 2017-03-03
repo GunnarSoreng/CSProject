@@ -1,9 +1,10 @@
-PAYSLIP FOR 0 0
+PAYSLIP FOR 0 2017
 ==========================
 Name of Staff: 
 Hours Worked: 0
 
 Basic Pay: kr 0,00
+Overtime:  kr 0,00
 
 ==========================
 Total Pay: kr 0,00
