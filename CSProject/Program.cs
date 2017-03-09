@@ -458,6 +458,14 @@ namespace CSProject
             }            return myStaff;
 
         }
+
+        /// <summary>
+        /// FileReader class constructor
+        /// </summary>
+        public FileReader()
+        {
+
+        }
     }
     #endregion
 

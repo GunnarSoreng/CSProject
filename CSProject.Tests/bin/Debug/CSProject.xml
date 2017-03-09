@@ -147,6 +147,11 @@
             </remarks>
             <returns>Staff type List with objects that can be of type Admin or Manager, with attribute 'name'</returns>
         </member>
+        <member name="M:CSProject.FileReader.#ctor">
+            <summary>
+            FileReader class constructor
+            </summary>
+        </member>
         <member name="T:CSProject.PaySlip">
             <summary>
             Class for creating payslip files on disk
